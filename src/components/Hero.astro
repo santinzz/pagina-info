@@ -1,0 +1,80 @@
+<main>
+  <h1 class='title'>Bienvenido a Soluciones Empresariales</h1>
+  <article class='main-info'>
+    <section class='about-container'>
+      <h2 class='about-info'>¿Quiénes somos?</h2>
+      <p>
+        Somos una empresa desde 2003 representamos a APSI, SA DE CV (asesoria,
+        procesamiento, y sistema de información) con oficina matriz en Saltillo,
+        Coahuila y presencia en 15 plazas para atender a mas de 3000 empresas en
+        la república Mexicana.
+      </p>
+    </section>
+    <section class='nom-cont'>
+      <img
+        src='./nomina.webp'
+        alt='Imagen sobre el sistema de nominas en nuestra empresa'
+      />
+    </section>
+  </article>
+  <div class='background'></div>
+</main>
+
+<style scoped>
+  main {
+    padding: 10px;
+    margin-top: 130px;
+  }
+
+  .title {
+    font-weight: 900;
+    text-align: center;
+    color: #333;
+    font-size: 3.4em;
+  }
+
+  .main-info {
+    display: flex;
+    padding: 50px;
+    max-width: 1300px;
+    margin: auto;
+    align-items: center;
+  }
+
+  p {
+    text-wrap: balance;
+  }
+
+  .background {
+    background-color: #7fa9c5;
+    height: 600px;
+    z-index: -1000;
+    top: 0;
+    left: 0;
+    margin-top: 130px;
+    position: absolute;
+    display: block;
+    width: 1400px;
+    border-radius: 0% 100% 68% 32% / 100% 0% 100% 0%;
+  }
+
+  .about-info {
+    color: #fff;
+    font-size: 3em;
+  }
+
+  .about-container p {
+    color: #333;
+    font-size: 1.4em;
+    font-weight: 500;
+  }
+
+  .nom-cont {
+    margin-top: 20px;
+  }
+
+  .nom-cont > img {
+    border-radius: 20px;
+    box-shadow: 5px 0px 20px #000;
+  }
+</style>

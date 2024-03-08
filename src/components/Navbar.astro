@@ -1,0 +1,189 @@
+---
+import { MenuBars } from '../components/MenuBars.tsx'
+---
+
+<script>
+  let isActive = false
+  const menuPressed = document.getElementById('menu-bars-button')
+  const navbarControlls = document.querySelector('.navbar-controlls')
+
+  menuPressed?.addEventListener('click', () => {
+    isActive = !isActive
+    if (isActive) {
+      navbarControlls?.setAttribute('style', 'transform: translateX(0)')
+    } else {
+      navbarControlls?.setAttribute('style', 'transform: translateX(100%)')
+    }
+  })
+</script>
+
+<header class='navbar-header'>
+  <nav class='navbar-main-info'>
+    <img src='./logo.webp' alt='Logo de la empresa soluciones empresariales' />
+    <h2>Soluciones Empresariales</h2>
+  </nav>
+  <nav class='navbar-controlls'>
+    <ul>
+      <li>
+        <a href='/'>Inicio</a>
+      </li>
+      <li>
+        <a href='/about'>Acerca de</a>
+      </li>
+      <li>
+        <a href='/projects'>Proyectos</a>
+      </li>
+    </ul>
+    <button>Contactar</button>
+  </nav>
+  <nav class='menu-bars-container'>
+    <button id='menu-bars-button'>
+      <MenuBars client:load />
+    </button>
+  </nav>
+</header>
+
+<style scoped>
+  :root {
+    --primary-color: #7fa9c5;
+  }
+
+  #menu-bars-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .navbar-header {
+    padding: 1em 0.4em;
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 130px;
+    background-color: #fff;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .navbar-main-info {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-main-info > img {
+    width: 130px;
+    height: auto;
+  }
+
+  .navbar-main-info > h2 {
+    margin-left: 0.5em;
+    color: #333;
+  }
+
+  .navbar-controlls {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    transition: 0.3s ease-in-out;
+  }
+
+  .navbar-controlls > ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+  }
+
+  .navbar-controlls a {
+    position: relative;
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease-in-out;
+    font-size: 1.2em;
+    font-weight: 500;
+  }
+
+  .navbar-controlls a::after {
+    content: '';
+    position: absolute;
+    background-color: var(--primary-color);
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    transition: width 0.2s ease-in-out;
+  }
+
+  .navbar-controlls a:hover {
+    color: var(--primary-color);
+  }
+
+  .navbar-controlls a:hover::after {
+    width: 100%;
+  }
+
+  .navbar-controlls button {
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--primary-color);
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: all 0.3s ease-in-out;
+    border: 1.5px solid #7fa9c5;
+    margin-right: 0.8em;
+    font-weight: 500;
+  }
+
+  .navbar-controlls button:hover {
+    background-color: #fff;
+    color: var(--primary-color);
+  }
+
+  .menu-bars-container {
+    display: none;
+  }
+
+  @media (width <= 1000px) {
+    .navbar-controlls {
+      transform-origin: right;
+      transform: translateX(100%);
+      padding: 10px;
+      flex-direction: column;
+      gap: 1.5em;
+      position: absolute;
+      background-color: #fff;
+      z-index: 1000;
+      top: 130px;
+      align-items: center;
+      width: 100%;
+    }
+
+    .navbar-controlls > ul {
+      width: 100%;
+      flex-direction: column;
+      gap: 1.5em;
+      align-items: center;
+    }
+
+    .navbar-controlls > ul li {
+      width: 100%;
+      text-align: center;
+    }
+
+    .navbar-controlls button {
+      margin-right: 0;
+    }
+    .menu-bars-container {
+      display: block;
+    }
+  }
+
+  @media (width <= 530px) {
+    .navbar-main-info > h1 {
+      display: none;
+    }
+  }
+</style>

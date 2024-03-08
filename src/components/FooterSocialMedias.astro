@@ -1,0 +1,47 @@
+<div class='social-medias'>
+  <p>Redes Sociales</p>
+  <a href='https://www.facebook.com/ApsiSistemas/?locale=es_LA'
+    >https://www.facebook.com/ApsiSistemas/?locale=es_LA</a
+  >
+</div>
+
+<style scoped>
+  .social-medias {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    padding-top: 32px;
+  }
+
+  .social-medias p {
+    font-size: 1.2em;
+    font-weight: 900;
+    color: #333;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease-in-out;
+    position: relative;
+  }
+
+  a::after {
+    height: 2px;
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease-in-out;
+    width: 0;
+    background-color: #7fa9c5;
+  }
+
+  a:hover {
+    color: #7fa9c5;
+  }
+
+  a:hover::after {
+    width: 100%;
+  }
+</style>

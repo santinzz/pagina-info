@@ -1,0 +1,81 @@
+---
+import Card from './Card.astro'
+---
+
+<article>
+  <header>
+    <h3>Servicios</h3>
+    <p>
+      Ofrecemos un software completo para Recursos Humanos que integra IMSS,
+      SAR, INFONAVIT y Nómina de manera eficiente y auditada, garantizando el
+      cumplimiento total de las obligaciones fiscales y patronales de forma
+      automatizada, conforme a las leyes vigentes.
+    </p>
+  </header>
+  <main class='services'>
+    <Card
+      title='NominaTISS-SAT'
+      text='Sistema Fiscal para la gestión de recursos humanos'
+    />
+    <Card title='APSI Check In-Out' text='Sistema de control de asistencia' />
+    <Card
+      title='ApsiVepa'
+      text='No tendrá que pagar multas, recargos ni cedulas de diferencia ¡Porque no las habrá!'
+    />
+    <Card
+      title='Recursos humanos'
+      text='Ofrece una solución integral para la gestión de personal, cubriendo aspectos como reclutamiento, selección, capacitación, evaluación del desempeño y administración de nómina.'
+    />
+  </main>
+  <div class='background'></div>
+</article>
+
+<style scoped>
+  article {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 130px;
+    max-width: 1300px;
+    display: flex;
+    gap: 2em;
+  }
+
+  article > header {
+    max-width: 800px;
+    margin: auto;
+  }
+
+  h3 {
+    text-align: center;
+    font-size: 3em;
+    font-weight: 900;
+    color: #333;
+  }
+
+  p {
+    max-width: 80ch;
+    font-size: 1.2em;
+    color: #333;
+  }
+
+  .services {
+    margin: auto;
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+  }
+
+  .background {
+    width: 800px;
+    height: 580px;
+    border-radius: 100% 0% 51% 49% / 32% 100% 0% 68%;
+    background-color: #dd5858;
+    z-index: -1000;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 880px;
+  }
+</style>
